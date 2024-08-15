@@ -1,0 +1,44 @@
+<odoo>
+    <!-- Preconfigured Authors -->
+    <record id="author_stephen_king" model="bookstore.author">
+        <field name="name">Stephen King</field>
+        <field name="biography">Stephen King is an American author of horror, supernatural fiction, suspense, and fantasy novels.</field>
+    </record>
+
+    <record id="author_jk_rowling" model="bookstore.author">
+        <field name="name">J.K. Rowling</field>
+        <field name="biography">J.K. Rowling is a British author, best known for writing the Harry Potter fantasy series.</field>
+    </record>
+
+    <!-- Preconfigured Books -->
+    <record id="book_it" model="bookstore.book">
+        <field name="title">It</field>
+        <field name="author_id" ref="author_stephen_king"/>
+        <field name="published_date">1986-09-15</field>
+        <field name="isbn">9780450411434</field>
+        <field name="price">15.99</field>
+        <field name="quantity_in_stock">100</field>
+    </record>
+
+    <record id="book_harry_potter_sorcerers_stone" model="bookstore.book">
+        <field name="title">Harry Potter and the Sorcerer's Stone</field>
+        <field name="author_id" ref="author_jk_rowling"/>
+        <field name="published_date">1997-06-26</field>
+        <field name="isbn">9780439708180</field>
+        <field name="price">10.99</field>
+        <field name="quantity_in_stock">200</field>
+    </record>
+
+    <!-- Preconfigured Customers -->
+    <record id="customer_john_doe" model="bookstore.customer">
+        <field name="name">John Doe</field>
+        <field name="contact_details">123 Main St, Anytown, USA</field>
+        <field name="customer_since">2020-01-01</field>
+    </record>
+
+    <record id="customer_jane_smith" model="bookstore.customer">
+        <field name="name">Jane Smith</field>
+        <field name="contact_details">456 Elm St, Othertown, USA</field>
+        <field name="customer_since">2021-05-15</field>
+    </record>
+</odoo>

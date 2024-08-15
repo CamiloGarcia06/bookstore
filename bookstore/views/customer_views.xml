@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view for Customer -->
+    <record id="view_customer_form" model="ir.ui.view">
+        <field name="name">customer.form</field>
+        <field name="model">bookstore.customer</field>
+        <field name="arch" type="xml">
+            <form string="Customer">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="contact_details"/>
+                        <field name="customer_since"/>
+                    </group>
+                    <notebook>
+                        <page name="sale_history_ids" string="Purchase History">
+                            <field name="sale_history_ids" readonly="1">
+                                <tree string="Purchase History">
+                                    <field name="book_id"/>
+                                    <field name="price_unit"/>
+                                    <field name="product_uom_qty"/>
+                                    <field name="price_subtotal"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for Customers -->
+    <record id="view_customer_tree" model="ir.ui.view">
+        <field name="name">customer.tree</field>
+        <field name="model">bookstore.customer</field>
+        <field name="arch" type="xml">
+            <tree string="Customers">
+                <field name="name" />
+                <field name="customer_since" />
+            </tree>
+        </field>
+    </record>
+
+        <!-- Action for Customers -->
+        <record id="action_bookstore_customers" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="res_model">bookstore.customer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_customer_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first customer
+                </p>
+            </field>
+        </record>
+</odoo>

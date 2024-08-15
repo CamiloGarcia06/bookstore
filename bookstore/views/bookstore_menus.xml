@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Menu Root -->
+    <menuitem
+        id="bookstore_menu_root"
+        name="Bookstore"
+        parent="crm.crm_menu_sales"
+        sequence="100" />
+
+    <!-- Dashboard Menu -->
+    <menuitem
+        id="menu_bookstore_dashboard"
+        name="Books"
+        parent="bookstore_menu_root"
+        action="action_bookstore_dashboard_1"
+        sequence="1" />
+    <!-- Submenu for Authors -->
+    <menuitem
+        id="menu_bookstore_authors"
+        name="Authors"
+        parent="bookstore_menu_root"
+        action="action_bookstore_authors"
+        sequence="2" />
+
+    <!-- Submenu for Customers -->
+    <menuitem
+        id="menu_bookstore_customers"
+        name="Customers"
+        parent="bookstore_menu_root"
+        action="action_bookstore_customers"
+        sequence="3" />
+
+</odoo>
